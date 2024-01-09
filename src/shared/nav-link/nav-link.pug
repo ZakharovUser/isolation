@@ -1,0 +1,7 @@
+mixin nav-link(title, href, active)
+    - const classes= "block py-2.5 px-5 rounded";
+
+    if active
+        a(href= href class= classes).bg-primary.text-white= title
+    else
+        a(href= href class= classes + " " + "hover:outline-primary hover:outline-2 hover:outline hover:outline-offset-minus2")= title

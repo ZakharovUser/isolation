@@ -13,8 +13,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-
+  
   --posters-slider-shadow-bg-color: #000;
   --posters-slider-width: 265px;
   --posters-slider-height: 392px
@@ -24,7 +23,8 @@ html,body {
   position: relative;
   height: 100%;
   margin: 0;
-  padding: 0
+  padding: 0;
+  background-color: #f9f9f9;
 }
 
 @tailwind base;

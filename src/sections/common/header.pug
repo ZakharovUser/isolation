@@ -1,0 +1,15 @@
+include ../../shared/nav-link/nav-link
+
+- const activeNavigationIndex = 0;
+
+header.mb-4.pt-4.w-screen
+    div.container.flex.justify-between.bg-white.mx-auto.p-4.rounded-lg.items-center.flex-wrap.shadow-md
+        a.block.bg-gray-300(href= paths.index class= "w-[235px] h-[60px]")
+        nav
+            ul.flex.flex-wrap.justify-center.items-center(class= "gap-0.5")
+                each item,idx in navigation
+                    li
+                        +nav-link(item.title, item.href, (activeNavigationIndex === idx))
+        div.flex.flex-col.items-center.gap-2
+            a(href="tel:+79991234567").text-nowrap +7 (999) 123-45-67
+            button.px-4.py-2.rounded.bg-primary.text-white(type="button") Заказать звонок
