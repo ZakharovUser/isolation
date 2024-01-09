@@ -1,0 +1,22 @@
+:root {
+  --primary: #5cd9e9;
+  --primary-light: #0dc8da;
+  --primary-dark: #089db4;
+
+  --text-dark: #011214;
+  --text-light: #fff;
+
+  --seconadary: #41302f;
+  --seconadary-light: #8C6456;
+
+  --seconadary-2: #263738;
+  --seconadary-3: #63675D;
+
+  --bg100: #fff;
+  --bg200: #d3f5f8;
+  --bg300: #a7ebf2;
+  --bg400: #65dce7;
+  --bg500: #39d2e1;
+  --bg600: #23cddd;
+  --bg700: #0dc8da;
+}

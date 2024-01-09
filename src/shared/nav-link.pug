@@ -1,0 +1,5 @@
+mixin nav-link(title, href, active)
+    if active
+        a(href= href).block.py-1.px-3.active= title
+    else
+        a(href= href).block.py-1.px-3= title

@@ -1,0 +1,81 @@
+@import url(theme.css);
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 19px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--text-dark);
+  background-color: var(--bg100);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+  --posters-slider-shadow-bg-color: #000;
+  --posters-slider-width: 265px;
+  --posters-slider-height: 392px
+}
+
+html,body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.posters-slider {
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.posters-slider .swiper {
+  overflow: visible;
+  width: var(--posters-slider-width);
+  height: var(--posters-slider-height)
+}
+
+.posters-slider .swiper-slide {
+  border-radius: 10px;
+  justify-content: center;
+  display: flex;
+  background-color: #d9d9d9;
+}
+
+.posters-slider .swiper-slide-shadow {
+  border-radius: 10px;
+  background: var(--posters-slider-shadow-bg-color)
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+@media (orientation: portrait) {
+  .posters-slider {
+    --posters-slider-width: 68vw;
+    --posters-slider-height: calc(68vw * 1.48)
+  }
+}
+
+@media (orientation: landscape) {
+  .posters-slider {
+    --posters-slider-width: calc(80vh / 1.48);
+    --posters-slider-height: 80vh
+  }
+}
+
+
