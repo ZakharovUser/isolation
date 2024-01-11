@@ -1,0 +1,33 @@
+mixin service-item(service)
+  li(class="col-span-2 bg-gray-400 rounded relative overflow-hidden")
+    a(
+      class="group flex justify-center items-end w-full h-full absolute z-[5] text-white pb-6 bg-gradient-to-t from-black from-0% via-transparent via-30%"
+      href=paths.services
+    )
+      h3(class="text-center text-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-primary group-focus-visible:outline-offset-8")=service.name
+    img(src=service.image.url class="object-fill")
+
+-
+  const services = [
+    {name: "Название услуги 1", image: {
+      url: "/public/image/services/service-1.jpeg",
+    }},
+    {name: "Название услуги 2", image: {
+      url: "/public/image/services/service-2.jpeg"
+    }},
+    {name: "Название услуги 3", image: {
+      url: "/public/image/services/service-3.jpeg"
+    }},
+    {name: "Название услуги 4", image: {
+      url: "/public/image/services/service-4.jpeg"
+    }},
+  ]
+
+section(class="mb-12")
+  div(class="container mx-auto")
+    h2(class="text-5xl py-8 text-center") Наши услуги
+    ul(class="grid grid-cols-4 grid-rows-[repeat(2,300px)] gap-5 mb-12")
+      each service in services
+        +service-item(service)
+    div(class="flex justify-center")
+      a(href=paths.services class=" block rounded text-white bg-primary px-20 py-3") Все услуги
