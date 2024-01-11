@@ -1,0 +1,41 @@
+include slide
+
+-
+  const slides = [
+    {
+      title: "Заголовок слайда 1",
+      description: "Lorem ipsum dolor sit amet consectetur. Senectus tincidunt quis gravida orci leo nec pretium et eleifend. Faucibus hendrerit dignissim neque etiam at imperdiet consectetur. Nisl neque congue phasellus ipsum facilisi purus commodo tellus at. Eget rhoncus mauris aliquam urna urna suscipit morbi."
+    },
+    {
+      title: "Заголовок слайда 2",
+      description: "Lorem ipsum dolor sit amet consectetur. Senectus tincidunt quis gravida orci leo nec pretium et eleifend. Faucibus hendrerit dignissim neque etiam at imperdiet consectetur. Nisl neque congue phasellus ipsum facilisi purus commodo tellus at. Eget rhoncus mauris aliquam urna urna suscipit morbi."
+    },
+    {
+      title: "Заголовок слайда 3",
+      description: "Lorem ipsum dolor sit amet consectetur. Senectus tincidunt quis gravida orci leo nec pretium et eleifend. Faucibus hendrerit dignissim neque etiam at imperdiet consectetur. Nisl neque congue phasellus ipsum facilisi purus commodo tellus at. Eget rhoncus mauris aliquam urna urna suscipit morbi."
+    }
+  ]
+
+section(class="h-screen relative z-[5] overflow-hidden mb-4")
+  div(class="swiper promo-swiper h-full w-full absolute")
+    div(class="swiper-wrapper")
+      each slide in slides
+        +promo-slide(slide)
+    div(class="swiper-pagination")
+
+  div(class="container mx-auto h-full flex items-center justify-end px-4 relative z-[5] pointer-events-none")
+    div(class="rounded-lg bg-white px-4 py-8 shadow-md pointer-events-auto")
+      p(class="uppercase text-xl font-bold leading-normal mb-8") Заказать консультацию
+      form(class="flex flex-col gap-8 m-0")
+        input(type="text" placeholder="Имя" aria-label="Имя" class="rounded" required)
+
+        // TODO Добавить маску для номера
+        input(type="text" placeholder="Номер телефона" aria-label="Номер телефона" class="rounded" required)
+
+        label(class="flex gap-6 items-center")
+          input(class="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm" type="checkbox" name="accept" required)
+          span Принимаю условия
+            br
+            a(href="#" class="underline") Пользовательского соглашения
+
+        button(type="submit" class="bg-emphasis text-white text-lg rounded-lg py-3") Отправить

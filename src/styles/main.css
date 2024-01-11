@@ -34,6 +34,7 @@ html, body {
 @tailwind components;
 @tailwind utilities;
 
+/* Promo slider */
 .promo-swiper__bullet_active {
   opacity: 0.4;
   transform: scale(1.3);
