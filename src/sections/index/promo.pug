@@ -1,0 +1,30 @@
+mixin promo-slide(slide)
+  div(class="swiper-slide bg-gray-300 bg-cover")
+    div(class="container mx-auto pl-4 pr-[660px] flex flex-col justify-center gap-7 h-full")
+      p(class="text-white text-5xl")=slide.title
+      p(class="text-2xl")=slide.description
+
+
+section(class="h-screen relative z-[5] overflow-hidden")
+  div(class="swiper promo-swiper h-full w-full absolute")
+    div(class="swiper-wrapper")
+      each slide in promo_slides
+        +promo-slide(slide)
+    div(class="swiper-pagination")
+
+  div(class="container mx-auto h-full flex items-center justify-end px-4 relative z-[5] pointer-events-none")
+    div(class="rounded-lg bg-white px-4 py-8 shadow-md pointer-events-auto")
+      p(class="uppercase text-xl font-bold leading-normal mb-8") Заказать консультацию
+      form(class="flex flex-col gap-8 m-0")
+        input(type="text" placeholder="Имя" aria-label="Имя" class="rounded" required)
+
+        // TODO Добавить маску для номера
+        input(type="text" placeholder="Номер телефона" aria-label="Номер телефона" class="rounded" required)
+
+        label(class="flex gap-6 items-center")
+          input(class="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm" type="checkbox" name="accept" required)
+          span Принимаю условия
+            br
+            a(href="#" class="underline") Пользовательского соглашения
+
+        button(type="submit" class="bg-emphasis text-white text-lg rounded-lg py-3") Отправить

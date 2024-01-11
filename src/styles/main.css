@@ -1,4 +1,7 @@
 @import url(theme.css);
+@import url(swiper/swiper.css);
+@import url(swiper/modules/pagination.css);
+@import url(swiper/modules/effect-fade.css);
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -13,13 +16,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   --posters-slider-shadow-bg-color: #000;
   --posters-slider-width: 265px;
   --posters-slider-height: 392px
 }
 
-html,body {
+html, body {
   position: relative;
   height: 100%;
   margin: 0;
@@ -30,6 +33,12 @@ html,body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.promo-swiper__bullet_active {
+  opacity: 0.4;
+  transform: scale(1.3);
+  transition: transform .3s;
+}
 
 .posters-slider {
   overflow: hidden;
