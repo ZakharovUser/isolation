@@ -1,0 +1,13 @@
+mixin work-slide(content)
+  div(class="swiper-slide bg-white")=content
+
+section(class="bg-gray-100 h-100 overflow-hidden")
+  h2(class="text-5xl my-8 text-center") Работы
+  div(class="swiper works-swiper h-[90%] py-24 relative")
+    div(class="swiper-wrapper")
+      each slide in ["Slide 1", "Slide 2", "Slide 3", "Slide 4"]
+        +work-slide(slide)
+    div(class="swiper-navigation works-swiper-navigation absolute top-1/2 z-10 w-full")
+      div(class="container mx-auto px-8")
+        button(type="button" class="works-swiper-navigation__prev-slide") <
+        button(type="button" class="works-swiper-navigation__next-slide") >
