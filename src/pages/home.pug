@@ -1,0 +1,11 @@
+extends ../extends/layout
+
+block content
+    include ../sections/common/header
+
+    main
+      include ../sections/home/promo
+      include ../sections/home/services
+      include ../sections/home/works
+
+    script(src="src/index.ts" type="module")
