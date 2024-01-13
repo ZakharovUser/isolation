@@ -3,6 +3,7 @@
 @import url(swiper/modules/pagination.min.css);
 @import url(swiper/modules/effect-fade.min.css);
 @import url(swiper/modules/effect-coverflow.min.css);
+@import url(swiper/modules/effect-creative.min.css);
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -44,18 +45,20 @@ html, body {
 
 /* Works slider */
 .works-swiper .swiper-slide-active {
-  @apply shadow-2xl
-}
-
-.works-swiper .swiper-slide:not(.swiper-slide-active) {
   @apply shadow-xl
 }
 
-.works-swiper .swiper-slide {
-  /*aspect-ratio: 0.5/0.5;*/
-  /*width: auto !important;*/
-  /*height: auto !important;*/
+.works-swiper .swiper-slide:not(.swiper-slide-active) {
+  @apply shadow-lg
 }
+
+.works-swiper {
+  height: auto;
+  aspect-ratio: 3/2;
+  max-height: 85vh;
+}
+
+/* --- */
 
 .posters-slider {
   overflow: hidden;

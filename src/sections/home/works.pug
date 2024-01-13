@@ -1,13 +1,52 @@
-mixin work-slide(content)
-  div(class="swiper-slide bg-white")=content
+include ../../shared/link
 
-section(class="bg-gray-100 h-100 overflow-hidden")
-  h2(class="text-5xl my-8 text-center") Работы
-  div(class="swiper works-swiper h-[90%] py-24 relative")
+mixin work-slide(slide)
+  div(class="swiper-slide rounded relative")
+    h3(class="px-2 md:px-4 text-white w-full text-center md:text-xl lg:text-3xl text-sm font-bold absolute bottom-6 z-10")=slide.title
+    img(src=slide.imageUrl class="object-fill")
+
+mixin work-slider-navigation()
+  div(class="swiper-navigation works-swiper-navigation w-full absolute z-10 top-2/4 -translate-y-2/4 pointer-events-none")
+    div(class="px-1 sm:px-[6vw] flex justify-between")
+      button(type="button" class="pointer-events-auto flex justify-center items-center shadow-md w-12 h-12 rounded-full bg-white works-swiper-navigation__prev-slide")
+        include ../../../public/icons/arrow-left.svg
+      button(type="button" class="pointer-events-auto flex justify-center items-center shadow-md w-12 h-12 rounded-full bg-white works-swiper-navigation__next-slide")
+        include ../../../public/icons/arrow-right.svg
+
+mixin work-slider(sliders)
+  div(class="swiper works-swiper w-full relative py-9 mb-3")
     div(class="swiper-wrapper")
-      each slide in ["Slide 1", "Slide 2", "Slide 3", "Slide 4"]
+      each slide in sliders
         +work-slide(slide)
-    div(class="swiper-navigation works-swiper-navigation absolute top-1/2 z-10 w-full")
-      div(class="container mx-auto px-8")
-        button(type="button" class="works-swiper-navigation__prev-slide") <
-        button(type="button" class="works-swiper-navigation__next-slide") >
+    +work-slider-navigation
+
+-
+  const workSlides = [
+    {
+      title: "Lorem ipsum dolor sit amet consectetur. Et varius.",
+      imageUrl: "/image/works/work-1.jpeg"
+    },
+    {
+      title: "Lorem ipsum dolor sit amet consectetur. Et varius.",
+      imageUrl: "/image/works/work-2.jpeg"
+    },
+    {
+      title: "Lorem ipsum dolor sit amet consectetur. Et varius.",
+      imageUrl: "/image/works/work-3.jpeg"
+    },
+    {
+      title: "Lorem ipsum dolor sit amet consectetur. Et varius.",
+      imageUrl: "/image/works/work-1.jpeg"
+    },
+    {
+      title: "Lorem ipsum dolor sit amet consectetur. Et varius.",
+      imageUrl: "/image/works/work-2.jpeg"
+    },
+  ]
+
+section(class="mb-3")
+  h2(class="text-5xl text-center") Работы
+  +work-slider(workSlides)
+  +link(paths.works, "Все работы")
+
+
