@@ -1,3 +1,5 @@
+include ../../shared/link
+
 mixin service-item(service)
   li(class="col-span-2 bg-gray-400 rounded relative overflow-hidden")
     a(
@@ -29,5 +31,4 @@ section(class="mb-12")
     ul(class="grid grid-cols-4 grid-rows-[repeat(2,300px)] gap-5 mb-12")
       each service in services
         +service-item(service)
-    div(class="flex justify-center")
-      a(href=paths.services class=" block rounded text-white bg-primary px-20 py-3") Все услуги
+    +link(paths.services, "Все услуги")
